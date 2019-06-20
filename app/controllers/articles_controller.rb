@@ -20,6 +20,8 @@ class ArticlesController < ApplicationController
           render 'new'
         end
       end
+
+      before_action :require_author, only: [:update, :edit, :destroy]
      
       def edit
         @article = Article.find(params[:id])

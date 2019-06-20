@@ -6,6 +6,17 @@
     <p class="article_content"><%= @article.body %></p>
 
     <!-- Your code here -->
+    <% if current_user && current_user.author? %>
+      <p class="edit">
+        <%= link_to "Edit Article", edit_article_path(@article.id)%>
+      </p>
+    <%end%>
+
+    <% if current_user && current_user.author? %> 
+      <p class="delete">
+      <%= link_to "Delete", article_path(@article), method: "delete" %><p> 
+    <% end %> 
+
 
     
   </div>
