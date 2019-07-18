@@ -1,7 +1,9 @@
 class ArticlesController < ApplicationController
-    def index
+      def index
         @articles = Article.all
       end
+
+      before_action :require_user, only: [:show]
      
       def show
         @article = Article.find(params[:id])

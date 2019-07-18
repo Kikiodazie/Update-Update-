@@ -20,9 +20,13 @@
           <!-- Your code here -->
           <% if current_user %> 
             <ul> 
-              <li><%= current_user.email %></li> 
+              <li>Good day, <%=  current_user.first_name  %></li> 
+              <li><%= link_to "Profile", 'profile' %></a></li>
               <li><%= link_to "Log out", logout_path, method: "delete" %></li> 
             </ul> 
+ 
+              
+ 
           <% else %> 
             <ul> 
               <li><%= link_to "Login", 'login' %></a></li> 

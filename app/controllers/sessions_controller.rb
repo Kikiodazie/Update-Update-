@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
     def new
+        if current_user
+            redirect_to '/'
+        end
     end
 
 #Authenticate and find users using bycrpt and has_secure_password

@@ -1,0 +1,13 @@
+<div class= "profile">
+
+    <% if current_user %> 
+        <p>First Name: <%=  current_user.first_name  %> </p>
+        <p>Last Name: <%=  current_user.last_name  %> </p>
+        <p>Email: <%=  current_user.email %> </p>
+    <% else %> 
+        Sorry Create an account!!!
+        <%= link_to "Create an account", 'signup' %>
+            
+    <% end %> 
+
+</div>
